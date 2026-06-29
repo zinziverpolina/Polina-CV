@@ -164,8 +164,8 @@ h1 {
 .portrait {
   position: absolute;
   top: 50px;
-  right: -140px;
-  width: 350px;
+  right: 24px;
+  width: 320px;
   height: auto;
   z-index: 3;
   filter: contrast(1.05);
