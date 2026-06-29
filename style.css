@@ -1,0 +1,343 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #222;
+  --paper: #f6f6f6;
+  --line: #e2e2e2;
+  --text: #111;
+  --muted: #777;
+  --chrome: #ececec;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Courier New", Courier, monospace;
+}
+
+body {
+  padding: 28px;
+}
+
+.desktop {
+  min-height: calc(100vh - 56px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.window {
+  position: relative;
+  width: min(100%, 1120px);
+  min-height: 1420px;
+  background: var(--paper);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px #777, 0 18px 50px rgba(0,0,0,.42);
+}
+
+.titlebar {
+  height: 96px;
+  background: var(--chrome);
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 70px minmax(290px, 530px) 1fr;
+  align-items: end;
+  padding: 0 22px 0 34px;
+}
+
+.file-icon {
+  align-self: center;
+  color: #1682a5;
+  font-size: 28px;
+  transform: translateY(12px);
+}
+
+.tab {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 28px;
+  background: #f7f7f7;
+  border-radius: 18px 18px 0 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  letter-spacing: -.03em;
+  color: #333;
+}
+
+.dot {
+  margin-left: auto;
+  color: #777;
+  font-size: 18px;
+}
+
+.controls {
+  align-self: start;
+  justify-self: end;
+  display: flex;
+  gap: 58px;
+  padding-top: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 42px;
+  line-height: 1;
+}
+
+.toolbar {
+  height: 70px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  background: #fbfbfb;
+}
+
+.links {
+  display: flex;
+  gap: 34px;
+  font-size: 27px;
+}
+
+.links a {
+  color: #111;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  color: #6f6f6f;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 28px;
+}
+
+.content {
+  position: relative;
+  padding: 22px 34px 130px;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  line-height: 1.16;
+}
+
+h1,
+h2,
+p,
+ul {
+  margin: 0;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 62px;
+  line-height: .98;
+  letter-spacing: .01em;
+}
+
+.role {
+  margin-top: 8px;
+  font-size: 25px;
+}
+
+.meta {
+  margin-top: 46px;
+}
+
+.summary {
+  margin-top: 42px;
+  max-width: 760px;
+}
+
+.portrait {
+  position: absolute;
+  top: 50px;
+  right: -140px;
+  width: 350px;
+  height: auto;
+  z-index: 3;
+  filter: contrast(1.05);
+}
+
+.block {
+  margin-top: 58px;
+}
+
+h2 {
+  color: #777;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.rule {
+  margin-top: 20px;
+  height: 2px;
+  border-top: 3px dashed #222;
+  width: 880px;
+}
+
+.rule.small {
+  width: 460px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  margin-top: 30px;
+  max-width: 860px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 80px;
+  row-gap: 0;
+  margin-top: 8px;
+}
+
+.grid .block {
+  margin-top: 58px;
+}
+
+.grid ul,
+.education p {
+  margin-top: 28px;
+}
+
+.education {
+  grid-column: 1;
+}
+
+.software {
+  grid-row: span 2;
+}
+
+.statusbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 82px;
+  border-top: 1px solid var(--line);
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  padding: 0 38px;
+  color: #868686;
+  font-size: 24px;
+  letter-spacing: .03em;
+}
+
+.statusbar span:nth-child(2),
+.statusbar span:nth-child(4) {
+  width: 1px;
+  height: 28px;
+  background: #e0e0e0;
+}
+
+@media (max-width: 900px) {
+  body {
+    padding: 14px;
+  }
+
+  .window {
+    min-height: auto;
+    border-radius: 12px;
+  }
+
+  .titlebar {
+    height: 72px;
+    grid-template-columns: 44px 1fr 92px;
+    padding: 0 12px;
+  }
+
+  .tab {
+    font-size: 17px;
+    padding: 0 14px;
+  }
+
+  .controls {
+    gap: 16px;
+    font-size: 24px;
+  }
+
+  .toolbar {
+    height: auto;
+    min-height: 58px;
+    align-items: flex-start;
+    padding: 16px 18px;
+  }
+
+  .links {
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 18px;
+  }
+
+  .icons {
+    display: none;
+  }
+
+  .content {
+    padding: 18px 18px 110px;
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: clamp(40px, 12vw, 62px);
+  }
+
+  .role {
+    font-size: 18px;
+  }
+
+  .portrait {
+    position: static;
+    display: block;
+    width: min(100%, 330px);
+    margin: 28px 0 0 auto;
+  }
+
+  .summary br {
+    display: none;
+  }
+
+  .rule,
+  .rule.small {
+    width: 100%;
+  }
+
+  .columns,
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .statusbar {
+    height: auto;
+    min-height: 70px;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 18px;
+    font-size: 16px;
+  }
+}
