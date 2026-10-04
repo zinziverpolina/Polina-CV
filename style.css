@@ -223,6 +223,19 @@ ul {
   padding: 0;
 }
 
+.clients li {
+  white-space: nowrap;
+}
+
+.projects ul {
+  margin-top: 30px;
+  max-width: 860px;
+}
+
+.projects li + li {
+  margin-top: 16px;
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
